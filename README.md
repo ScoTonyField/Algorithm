@@ -1,5 +1,6 @@
 # Algorithm
-Daily Code Training on Leetcode
+Daily Code Training on Leetcode/
+Algorithm learning on CS Course
 
 - Leetcode_27
 
