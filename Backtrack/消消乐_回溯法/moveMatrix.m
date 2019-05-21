@@ -14,12 +14,12 @@ function [Matrix, score] = moveMatrix(initialMatrix,xpoint,direction)
 
 [Matrix,xNewpoint,yNewpoint] = Swap(initialMatrix,xpoint,direction);
 [Row,Col] = size(Matrix);
-count = 1;
 % 判断xpoint行最大消去得分
 rowx = xNewpoint(1);colx = xNewpoint(2);
 loadPoint(1,1) = rowx; loadPoint(2,1) = colx;
 xnum = Matrix(rowx,colx);
 score = 0;
+count= 1;
 for i = (colx-2):(colx-1)
     if(0<i && i<Col && Matrix(rowx,i) == xnum)
         count = count + 1;

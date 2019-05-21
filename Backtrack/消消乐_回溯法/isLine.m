@@ -81,5 +81,5 @@ for rowx = 1:Row
         end
     end
 end
-disp(score)
+score
 end

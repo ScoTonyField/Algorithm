@@ -44,8 +44,7 @@ for i = M:-1:1
                 Score = Score + score;
             end
         else
-            Score = Score + score;
-            fprintf('分数为：%d',Score);
+            fprintf('分数为：%d\n',Score);
             fprintf('第%d次结束\n',count);
             count = count + 1;
             [Score, Matrix] = BackTracking(Matrix);
