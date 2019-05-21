@@ -26,10 +26,10 @@ for i = Row:-1:1
             fprintf('当前分数：%d\n',Score);
             fprintf('调整方向：向上移动\n');
             disp(matrix)
-        else
-            fprintf('当前坐标：%d,%d\n',i,j);
-            fprintf('当前分数没有改变：%d\n',Score);
-            disp(matrix)
+%         else
+%             fprintf('当前坐标：%d,%d\n',i,j);
+%             fprintf('当前分数没有改变：%d\n',Score);
+%             disp(matrix)
         end
     end
 end

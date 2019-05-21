@@ -3,7 +3,7 @@ function score = getScore(count)
         score = 1;
     elseif count == 4
         score = 4;
-    elseif count == 5
+    elseif count >= 5
         score = 10;
     else
         score = 0;
