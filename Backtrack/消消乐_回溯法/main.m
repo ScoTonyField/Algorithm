@@ -19,23 +19,33 @@ clc;
 %         2,4,4,3;...
 %         1,2,3,2;];
 % totalnumber = 4;
+
 K = 4;
-M = 4;
-N = 8;
-for i = 1:20
-Matrix = createMatrix(K,M,N);
-MaxScore(i)=0;
-point = zeros(1,2);
-score=0;
-Step = 1;
-AllPoint = zeros(Step,1);
-disp(Matrix)
-MaxMatrix = zeros(M,N);
-% [score,Matrix] = DFS(Matrix,K);
-[MaxScore(i),MaxMatrix]=BackTrace(MaxScore(i),score,MaxMatrix,Matrix,K,Step);
-fprintf("全局最高分：%d\n",MaxScore(i));
-fprintf("初始化矩阵：\n");
-disp(Matrix)
-fprintf("最高分矩阵：\n");
-disp(MaxMatrix)
+M = 16;
+N = 6;
+% rand('seed',0);
+for runtimes = 1:1
+    st=cputime; 
+    Matrix = createMatrix(K,M,N);
+    MaxScore=0;
+    point = zeros(1,2);
+    score=0;
+    Step = 7;
+    AllPoint = zeros(Step,3);
+    disp(Matrix)
+    MaxMatrix = zeros(M,N);
+    % [score,Matrix] = DFS(Matrix,K);
+    [MaxScore,MaxMatrix]=BackTrace(MaxScore,score,MaxMatrix,Matrix,K,Step);
+    fprintf("全局最高分：%d\n",MaxScore);
+    fprintf("初始化矩阵：\n");
+    disp(Matrix)
+    fprintf("最高分矩阵：\n");
+    disp(MaxMatrix)
+    maxSocre(runtimes) = MaxScore;
+    et=cputime-st;
+    runtime(runtimes) = et;
 end
+fprintf("平均最高分：\n");
+    disp(mean(MaxScore))
+fprintf("平均运行时间：\n");
+    disp(mean(runtime))

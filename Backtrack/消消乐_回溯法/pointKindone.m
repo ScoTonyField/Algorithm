@@ -12,6 +12,7 @@ function [status] = pointKindone(point,initialMatrix)
                      
         point = findPoint(initialMatrix,4);
     end
+    status = 0;
     [~,n]=size(point);
     [Row,Col] = size(initialMatrix);
     for i = 1:n
@@ -22,6 +23,7 @@ function [status] = pointKindone(point,initialMatrix)
        row3 = row - 1;col3 = col + 1;
        row4 = row + 1;col4 = col + 1;
        % 判断列可能性
+       
        if(0<row1 && row1<=Row && 0<col1 && col1<=Col && 0<row2 && row2<=Row && 0<col2 && col2<=Col)
            if((initialMatrix(row1,col1) == initialMatrix(row2,col2)) && (initialMatrix(row1,col1) == initialMatrix(row,col)))
                status = 1;
