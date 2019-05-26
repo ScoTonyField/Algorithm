@@ -13,6 +13,10 @@ function [Matrix, score] = moveMatrix(initialMatrix,xpoint,direction)
 % ========================================
 
 [Matrix,xNewpoint,yNewpoint] = Swap(initialMatrix,xpoint,direction);
+fprintf("xNewPoint:\n");
+disp(xNewpoint);
+fprintf("yNewpoint:\n");
+disp(yNewpoint);
 [Row,Col] = size(Matrix);
 % 判断xpoint行最大消去得分
 rowx = xNewpoint(1);colx = xNewpoint(2);
@@ -42,24 +46,26 @@ end
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
+    fprintf("被消除元素的坐标：\n");
     disp(loadPoint)
-    loadPoint = [];
+    fprintf("消除元素后的矩阵：\n");
+    disp(Matrix)
 end
+loadPoint = [];
 score = score + getScore(count);
 % 判断xpoint列最大消去得分
-count = 1;=
+count = 1;
 loadPoint(1,1) = rowx; loadPoint(2,1) = colx;
 for j = (rowx-2):(rowx-1)
     if(0<j && j<=Row && Matrix(j,colx) == xnum)
         count = count + 1;
         loadPoint(1,count) = j;
         loadPoint(2,count) = colx;
-        disp(j)
     else
         break
     end
@@ -69,7 +75,6 @@ for j = (rowx+1):(rowx+2)
         count = count + 1;
         loadPoint(1,count) = j;
         loadPoint(2,count) = colx;
-        disp(j)
     else
         break
         
@@ -79,15 +84,18 @@ end
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
+    fprintf("被消除元素的坐标：\n");
     disp(loadPoint)
-    loadPoint = [];
+    fprintf("消除元素后的矩阵：\n");
+    disp(Matrix)
 end
 
+loadPoint = [];
 score = score + getScore(count);
 
 % 判断ypoint行最大消去得分
@@ -123,9 +131,13 @@ if(length(loadPoint)>2)
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
+    fprintf("被消除元素的坐标：\n");
     disp(loadPoint)
-    loadPoint = [];
+    fprintf("消除元素后的矩阵：\n");
+    disp(Matrix)
 end
+
+loadPoint = [];
 score = score + getScore(count);
 
 % 判断ypoint列最大消去得分
@@ -158,9 +170,13 @@ if(length(loadPoint)>2)
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
+    fprintf("被消除元素的坐标：\n");
     disp(loadPoint)
-    loadPoint = [];
+    fprintf("消除元素后的矩阵：\n");
+    disp(Matrix)
 end
+
+loadPoint = [];
 score = score + getScore(count);
 end
 

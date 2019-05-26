@@ -14,6 +14,7 @@ function [point] = findPoint(initialMatrix,number)
     
     [row,col] = size(initialMatrix);
     count = 1;
+    point = [];
     for i = 1:row
         for j = 1:col
             if(initialMatrix(i,j) == number)

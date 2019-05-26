@@ -13,6 +13,10 @@ function [Matrix, score] = moveMatrix(initialMatrix,xpoint,direction)
 % ========================================
 
 [Matrix,xNewpoint,yNewpoint] = Swap(initialMatrix,xpoint,direction);
+% fprintf("xNewpoint:\n");
+% disp(xNewpoint);
+% fprintf("yNewpoint:\n");
+% disp(yNewpoint);
 [Row,Col] = size(Matrix);
 % 判断xpoint行最大消去得分
 rowx = xNewpoint(1);colx = xNewpoint(2);
@@ -20,7 +24,7 @@ loadPoint(1,1) = rowx; loadPoint(2,1) = colx;
 xnum = Matrix(rowx,colx);
 score = 0;
 count= 1;
-for i = (colx-2):(colx-1)
+for i = (colx-1):-1:(colx-2)
     if(0<i && i<Col && Matrix(rowx,i) == xnum)
         count = count + 1;
         loadPoint(1,count) = rowx;
@@ -42,24 +46,26 @@ end
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
-    disp(loadPoint)
-    loadPoint = [];
+%     fprintf("x主左右被消除元素的坐标：\n");
+%     disp(loadPoint)
+%     fprintf("消除元素后的矩阵：\n");
+%     disp(Matrix)
 end
+loadPoint = [];
 score = score + getScore(count);
 % 判断xpoint列最大消去得分
-count = 1;=
+count = 1;
 loadPoint(1,1) = rowx; loadPoint(2,1) = colx;
-for j = (rowx-2):(rowx-1)
+for j = (rowx-1):-1:(rowx-2)
     if(0<j && j<=Row && Matrix(j,colx) == xnum)
         count = count + 1;
         loadPoint(1,count) = j;
         loadPoint(2,count) = colx;
-        disp(j)
     else
         break
     end
@@ -69,25 +75,26 @@ for j = (rowx+1):(rowx+2)
         count = count + 1;
         loadPoint(1,count) = j;
         loadPoint(2,count) = colx;
-        disp(j)
     else
-        break
-        
+        break    
     end
 end
 % if(rowx>1 && rowx+1<=Row && Matrix(rowx-1,colx)==Matrix(rowx+1,colx))
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
-    disp(loadPoint)
-    loadPoint = [];
+%     fprintf("x主上下被消除元素的坐标：\n");
+%     disp(loadPoint)
+%     fprintf("消除元素后的矩阵：\n");
+%     disp(Matrix)
 end
 
+loadPoint = [];
 score = score + getScore(count);
 
 % 判断ypoint行最大消去得分
@@ -96,7 +103,7 @@ count = 1;
 rowy = yNewpoint(1);coly = yNewpoint(2);
 loadPoint(1,1) = rowy;loadPoint(2,1) = coly;
 ynum = Matrix(rowy,coly);
-for i = (coly-2):(coly-1)
+for i = (coly-1):-1:(coly-2)
     if(0<i && i<=Col && Matrix(rowy,i) == ynum)
         count = count + 1;
         loadPoint(1,count) = rowy;
@@ -118,20 +125,24 @@ end
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
-    disp(loadPoint)
-    loadPoint = [];
+%     fprintf("y主左右被消除元素的坐标：\n");
+%     disp(loadPoint)
+%     fprintf("消除元素后的矩阵：\n");
+%     disp(Matrix)
 end
+
+loadPoint = [];
 score = score + getScore(count);
 
 % 判断ypoint列最大消去得分
 count = 1;
 loadPoint(1,1) = rowy;loadPoint(2,1) = coly;
-for j = (rowy-2):(rowy-1)
+for j = (rowy-1):-1:(rowy-2)
     if(0<j && j<=Row && Matrix(j,coly) == ynum)
         count = count + 1;
         loadPoint(1,count) = j;
@@ -153,14 +164,18 @@ end
 % else
 %     loadPoint = [];
 % end
-if(length(loadPoint)>2)
+if(count>=3)
     [~,m] = size(loadPoint);
     for ii = 1:m
         Matrix(loadPoint(1,ii),loadPoint(2,ii)) = 0;
     end
-    disp(loadPoint)
-    loadPoint = [];
+%     fprintf("y主上下被消除元素的坐标：\n");
+%     disp(loadPoint)
+%     fprintf("消除元素后的矩阵：\n");
+%     disp(Matrix)
 end
+
+loadPoint = [];
 score = score + getScore(count);
 end
 
