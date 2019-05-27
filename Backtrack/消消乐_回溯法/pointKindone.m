@@ -14,6 +14,7 @@ function [status] = pointKindone(point,initialMatrix)
     end
     [~,n]=size(point);
     [Row,Col] = size(initialMatrix);
+    status = 0;
     for i = 1:n
        row = point(1,i);
        col = point(2,i);

@@ -1,7 +1,7 @@
 function [initialMatrix] = createMatrix(K,M,N)
 
     if nargin == 0
-       K = 8;M = 16;N = 4; 
+       K = 4;M = 16;N = 4; 
     end
     
     initialMatrix = zeros(M,N);

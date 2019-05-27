@@ -93,7 +93,7 @@ for i = 1:row
         t = 0:0.1:2*pi;
         y = -0.5 + i + 0.5 * sin(t);
         x = -0.5 + j + 0.5 * cos(t);
-        fd=line(x,y);
+        fd=line(-x,-y);
 %         f1 = ezplot('line(x,y)',[0,column,0,row]);
           
         if StartMatrix(i,j) == 1
@@ -119,7 +119,7 @@ for i = 1:row
         t = 0:0.1:2*pi;
         y = 0.5 + i + 0.5 * sin(t);
         x = 0.5 + j + 0.5 * cos(t);
-        fd=line(x,y);
+        fd=line(-x,-y);
 %         f1 = ezplot(fd,[0,column,0,row]);
         if FinalMatrix(i,j) == 1
             set(fd,'Color','r');

@@ -13,11 +13,11 @@ clc
 % totalnumber = 4;
 
 K = 4;
-M = 10;
+M = 16;
 N = 4;
-Step = 1;
+Step = 5;
 
-for runtimes = 1:100
+for runtimes = 1:1
     st=cputime;
     Matrix = createMatrix(K,M,N);
     MaxScore=0;
@@ -33,16 +33,16 @@ for runtimes = 1:100
     disp(Matrix)
     fprintf("最高分矩阵：\n");
     disp(MaxMatrix)
-    maxSocre(runtimes) = MaxScore;
+    maxScore(runtimes) = MaxScore;
     et=cputime-st;
     runtime(runtimes) = et;
 end
 
-MeanMaxScore=mean(MaxScore);
+MeanMaxScore=mean(maxScore);
 MeanRuntime=mean(runtime);
-fprintf("10次平均最高分：\n");
+fprintf("平均最高分：\n");
 disp(MeanMaxScore)
-fprintf("10次平均运行时间：\n");
+fprintf("平均运行时间：\n");
 disp(MeanRuntime)
 StartMatrix = Matrix;
 FinalMatrix = MaxMatrix;
