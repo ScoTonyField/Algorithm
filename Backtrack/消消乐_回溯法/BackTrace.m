@@ -4,6 +4,7 @@ if MaxScore < score
     MaxMatrix = matrix;
 end
 if Step == 0
+    
     fprintf("Step:%d\n",Step);
     fprintf("当前最高分数：%d\n",MaxScore);
     fprintf("叶子节点分数：%d\n",score);
