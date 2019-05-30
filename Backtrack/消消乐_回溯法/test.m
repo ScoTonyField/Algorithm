@@ -16,8 +16,8 @@ K = 4;
 M = 8;
 N = 4;
 % Step = 1;
-for Step = 4:4
-for runtimes = 1:1
+for Step = 1:1
+for runtimes = 1:100
     st=cputime;
 %     Matrix = createMatrix(K,M,N);
     while(~goodMatrix(Matrix,K))

@@ -16,18 +16,21 @@ else%isempty(findPoint(matrix,0)) | (~isempty(findPoint(matrix,0)) & length(find
             [Score,matrix_now] = DFS(i,j,matrix,totalNumber);
             
 % ¼ôÖ¦
-            if Score>2
-                [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
-            elseif Score==1
-                if ~isempty(findPoint(matrix,0)) & length(findPoint(matrix,0))*rand()<2.8
-                    [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
-                end
-            end
+%             if Score>2
+%                 [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
+%             elseif Score==1
+%                 if ~isempty(findPoint(matrix,0)) & length(findPoint(matrix,0))*rand()<2.8
+%                     [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
+%                 end
+%             end
 
-%Î´¼ôÖ¦
-%               if Score>0
-%                  [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
-%               end
+% Î´¼ôÖ¦
+              if Score>0
+                 [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
+              end
+              if Score>0
+                 [MaxScore,MaxMatrix]=BackTrace(MaxScore,score + Score,MaxMatrix,matrix_now,totalNumber,Step - 1);
+              end
         end
     end
 end

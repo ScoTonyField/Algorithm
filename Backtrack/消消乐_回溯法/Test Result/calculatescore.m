@@ -1,5 +1,5 @@
-score = load('cuttingBacktracking_494_100.mat');
-score = score.maxScore;
+score = load('runningTime_484_1.mat');
+score = score.runtime;
 
 [n,~] = size(score);
 for i = 1:n
