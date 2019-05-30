@@ -1,5 +1,4 @@
 function [Matrix, score] = moveMatrix(initialMatrix,xpoint,direction)
-
 % ============= 代码说明 ==================
 % 输入：
 % initialMatrix为输入的矩阵

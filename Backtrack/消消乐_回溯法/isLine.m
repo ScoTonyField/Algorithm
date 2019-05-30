@@ -19,7 +19,7 @@ for rowx = 1:Row
         xnum = Matrix(rowx,colx);
         if(xnum ~= 0)
             count = 1;
-            for i = (colx-2):(colx-1)
+            for i = (colx-1):-1:(colx-2)
                 if(0<i && i<Col && Matrix(rowx,i) == xnum)
                     count = count + 1;
                     loadPoint(1,count) = rowx;
@@ -55,7 +55,7 @@ for rowx = 1:Row
             count = 1;
             % 判断xpoint列最大消去得分  
             loadPoint(1,1) = rowx; loadPoint(2,1) = colx;
-            for j = (rowx-2):(rowx-1)
+            for j = (rowx-1):-1:(rowx-2)
                 if(0<j && j<=Row && Matrix(j,colx) == xnum)
                     count = count + 1;
                     loadPoint(1,count) = j;
