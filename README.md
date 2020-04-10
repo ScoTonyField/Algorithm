@@ -8,7 +8,7 @@
 
   各种常见简单ML算法
 
-  <!--ML算法栏目中的数学公式可以用MathJax Plugin for Github的插件浏览-->
+  PS.ML算法栏目中的数学公式可以用MathJax Plugin for Github的插件浏览
 
 - :green_book:[​数据分析](<https://github.com/ScoTonyField/Algorithm/tree/master/DataAnalysis%26SQL>)
 
