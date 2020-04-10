@@ -1,16 +1,14 @@
-# Algorithm
-Daily Code Training on Leetcode/
-Algorithm learning on CS Course
+### 笔记列表
 
-- Leetcode_27
+- :blue_book:[数据结构与算法](https://github.com/ScoTonyField/Data Structure&Algorithms)
 
-# Backtrack
+  记录Leetcode刷题、算法等
 
-- Introduction of Backtrack
-- Eight Queen Problem
+- :orange_book:[机器学习](<https://github.com/ScoTonyField/Algorithm/Machine Learning>)
 
+  各种常见简单ML算法
 
+- :green_book:[​数据分析](https://github.com/ScoTonyField/DataAnalysis)
 
-# Dynamic Programming
+  数据分析相关小Tips和SQL
 
-- Introduction of DP
