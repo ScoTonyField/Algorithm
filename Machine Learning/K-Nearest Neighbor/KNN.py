@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from sklearn.datasets.samples_generator import make_blobs
 
 
-# KDTree Node
 class KdNode:
     def __init__(self,axis,point,left,right):
         self.axis = axis
@@ -12,7 +11,6 @@ class KdNode:
         self.left = left
         self.right = right
 
-# KDTree
 class KdTree:
     def load_data(self, data):
         # 加载数据
