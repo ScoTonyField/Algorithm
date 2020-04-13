@@ -14,3 +14,7 @@
 
   数据分析相关小Tips和SQL
 
+- :closed_book:[杂七杂八](<https://github.com/ScoTonyField/Algorithm/tree/master/ELSE>)
+
+  不定时更新一些小知识
+
