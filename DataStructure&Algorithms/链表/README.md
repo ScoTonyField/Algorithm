@@ -96,8 +96,77 @@ if (head->next == null) {
 
 #### 6-常见链表操作
 
-- 单链表反转
-- 链表中环的检测
-- 两个有序的链表合并
-- 删除链表倒数第 n 个结点
-- 求链表的中间结点
+1. 单链表反转
+2. 链表中环的检测
+3. 两个有序的链表合并
+4. 删除链表倒数第 n 个结点
+5. 求链表的中间结点
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+class Solution:
+    # 单链表反转
+    def reverse(list):
+        head = list
+        pre = None
+        while(head != None):
+            next = head.next
+            head.next = pre
+            pre = head
+            head = next
+        return pre
+    # 检测环
+    def checkCircle(list):
+        if(list == None):
+            return False
+        slow = list
+        fast = list
+        while(fast.next != None and fast != None):
+            slow = slow.next
+            fast = fast.next.next
+            if(slow == fast):
+                return True
+        return False
+    # 有序链表合并-哨兵结点
+   	def mergeTwoLists(l1,l2):
+        soldier = ListNode(0)
+        p = soldier
+        while ( l1 != None and l2 != None ):
+            if ( l1.val < l2.val ):
+                p.next = l1
+                l1 = l1.next
+            else:
+                p.next = l2
+                l2 = l2.next
+            p = p.next       
+        if (l1 != None):
+            p.next = l1
+        if (l2 != None):
+            p.next = l2
+        return soldier.next
+    # 删除倒数第K个结点
+    def delLastK(list,k):
+        def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        fast = head
+        slow = head
+        pre = None
+        i = 0
+        while(fast != None and i< n-1):
+            fast = fast.next
+            i = i + 1
+        # 快慢结点
+        while(fast.next != None):
+            fast = fast.next
+            pre = slow
+            slow = slow.next
+        # 删除结点
+        if(pre == None):
+            head = head.next
+       	else:
+            pre.next = pre.next.next
+        return head
+```
