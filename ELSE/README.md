@@ -5,4 +5,5 @@
 - [LRU缓存](https://github.com/ScoTonyField/Algorithm/blob/master/ELSE/LRU.md)
 - [github高级搜索](https://github.com/ScoTonyField/Algorithm/blob/master/ELSE/github高级搜索.md)
 - [i++与++i](<https://github.com/ScoTonyField/Algorithm/blob/master/ELSE/i++与++i.md>)
+- [洗牌算法](<https://github.com/ScoTonyField/Algorithm/blob/master/ELSE/洗牌算法.md>)
 
