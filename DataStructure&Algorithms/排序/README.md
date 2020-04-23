@@ -48,3 +48,6 @@
 
 - :spades:[冒泡、插入、选择](https://github.com/ScoTonyField/Algorithm/blob/master/DataStructure%26Algorithms/递归/冒泡-插入-选择.md)
 
+- [:hearts:快排、归并](https://github.com/ScoTonyField/Algorithm/blob/master/DataStructure%26Algorithms/递归/快排-归并.md)
+- [:clubs:线性排序](https://github.com/ScoTonyField/Algorithm/blob/master/DataStructure%26Algorithms/递归/线性排序.md)
+
